@@ -15,7 +15,7 @@ public class GroupsPage {
     @FindBy(xpath = "//h2/following-sibling::button")
     public WebElement createGroupButton;
 
-    @FindBy(css = "input[name='name']")
+    @FindBy(xpath= "(//input[@class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1o6z5ng'])[3]")
     public WebElement groupNameInput;
 
     @FindBy(name = "dateOfFinish")
@@ -54,11 +54,14 @@ public class GroupsPage {
     @FindBy(xpath = "//button[text()='Save']")
     public WebElement saveButton;
     @FindBy(xpath = "(//li[text()='Delete group'])[1]")
-    public WebElement deleteGroupButton1;
+    public WebElement deleteGroupThreeDots;
     @FindBy(xpath = "//button[text()='Delete']")
     public WebElement deleteButton;
     @FindBy(xpath = "//p[text()='A group with the same title already exists']")
     public WebElement warningText;
+    @FindBy(xpath = "(//div[@class='MuiTypography-root MuiTypography-h5" +
+            " MuiTypography-gutterBottom sc-dwnOUR gaIZVK css-1i17kim'])[1]")
+    public WebElement firstGroupText;
 
 
 

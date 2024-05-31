@@ -14,7 +14,7 @@ public class TeachersPage {
     public WebElement teachersTab;
     @FindBy(xpath = "(//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-1yxmbwk'])[1]")
     public WebElement threeDots;
-    @FindBy(xpath = "//li[text()='Edit']")
+    @FindBy(xpath = "(//li[text()='Edit'])[1]")
     public WebElement editButton;
     @FindBy(css = "input[name='name']")
     public WebElement editTeacherName;
@@ -48,5 +48,7 @@ public class TeachersPage {
     public WebElement deleteButton;
     @FindBy(xpath = "//p[text()='User with the same email already exists']")
     public WebElement warningText;
+    @FindBy(xpath = "//div[@class='sc-pyfCe gabNZw MuiBox-root css-0']")
+    public WebElement fillOutForm;
 
 }
