@@ -15,7 +15,7 @@ public class GroupsPage {
     @FindBy(xpath = "//h2/following-sibling::button")
     public WebElement createGroupButton;
 
-    @FindBy(xpath= "(//input[@class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1o6z5ng'])[3]")
+    @FindBy(css = "input[name='name']")
     public WebElement groupNameInput;
 
     @FindBy(name = "dateOfFinish")
@@ -32,6 +32,12 @@ public class GroupsPage {
 
     @FindBy(xpath = "//div[@class='css-1qf1rpk']/div")
     public List<WebElement> listOfGroups;
+
+    @FindBy(xpath = "//div[@class='css-1qf1rpk']/div/div/div/div")
+    public List<WebElement> listOfGroupNames;
+
+    @FindBy(xpath = "//img[@alt='there should be a photo here']")
+    public WebElement groupImage;
 
 
     @FindBy(id = "modal")
