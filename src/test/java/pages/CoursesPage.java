@@ -54,6 +54,8 @@ public class CoursesPage {
 
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement popUp;
+    @FindBy(xpath = "(//div[@class='sc-jNJNQp haMWCm'])[1]")
+    public WebElement restore;
 
     @FindBy(xpath = "//button[text()='Create course']")
     public WebElement createCourse;

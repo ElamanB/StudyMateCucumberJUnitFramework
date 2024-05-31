@@ -1,4 +1,4 @@
-package steps;
+package step_definitions;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
@@ -13,19 +13,14 @@ import pages.LoginPage;
 import utilities.Driver;
 import utilities.SeleniumUtils;
 
-public class CoursesPageSteps {
+public class EditCourse {
     WebDriver driver = Driver.getDriver();
     LoginPage loginPage = new LoginPage();
-    CoursesPage deleteCourseTests = new CoursesPage();
+    //CoursesPage deleteCourseTests = new CoursesPage();
     CoursesPage editCoursePage = new CoursesPage();
     CommonPage commonPage = new CommonPage();
     Actions action = new Actions(driver);
 
-    @Before
-    public void startPoint() {
-        driver = Driver.getDriver();
-        driver.get("https://codewise.studymate.us/login");
-    }
     @Given("Admin navigates to Studymate")
     public void admin_navigates_to_studymate() {
        driver.get("https://codewise.studymate.us/login");
@@ -76,28 +71,6 @@ public class CoursesPageSteps {
         commonPage.logOutButton.click();
         commonPage.logOutConfirmationButton.click();
     }
-    @When("In course section choose batch course and click on the delete button")
-    public void in_course_section_choose_batch_course_and_click_on_the_delete_button() {
-        deleteCourseTests.courses1.click();
-        deleteCourseTests.editMenuButton.click();
-        deleteCourseTests.delete1.click();
 
-    }
-    @Then("After making your changes, click on the save button to save your changes.")
-    public void after_making_your_changes_click_on_the_save_button_to_save_your_changes() {
-        deleteCourseTests.confirmDelete1.click();
-        Assert.assertTrue(deleteCourseTests.popUpWindow.isDisplayed());
-        deleteCourseTests.trash.click();
-        SeleniumUtils.waitForSeconds(5);
-        boolean isElementFound = false;
-        for (WebElement element : deleteCourseTests.listOfElements) {
-            if (element.getText().contains("batch5 edited")){
-                isElementFound = true;
-                System.out.println(isElementFound);
-                break;
-            }
-        }
-        Assert.assertTrue(isElementFound);
-    }
 }
 
